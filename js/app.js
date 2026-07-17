@@ -87,11 +87,11 @@
         "dot" + (i < current ? " done" : i === current ? " current" : "");
       dotsEl.appendChild(d);
     });
-    $("progress-label").textContent = `Q${current + 1} / ${QUESTIONS.length}`;
+    $("progress-label").textContent = `Question ${current + 1} / ${QUESTIONS.length}`;
 
     $("quiz-emoji").textContent = q.emoji || "🎈";
     $("quiz-question").textContent = q.question;
-    $("quiz-note").textContent = q.multiple ? "いくつでも選んでOK!" : "";
+    $("quiz-note").textContent = q.multiple ? "複数選択できます" : "";
 
     choicesEl.innerHTML = "";
     q.choices.forEach((choice, i) => {
@@ -117,9 +117,9 @@
       choicesEl.appendChild(b);
     });
 
-    btnBack.textContent = current === 0 ? "← 手紙にもどる" : "← もどる";
+    btnBack.textContent = current === 0 ? "手紙にもどる" : "もどる";
     btnNext.textContent =
-      current === QUESTIONS.length - 1 ? "かくにんへ →" : "つぎへ →";
+      current === QUESTIONS.length - 1 ? "かくにんへ" : "つぎへ";
     updateNav();
   }
 
@@ -268,7 +268,7 @@
     status.classList.remove("error");
 
     if (token) {
-      status.textContent = "送信中… 💌";
+      status.textContent = "送信中…";
       try {
         await saveToGitHub(payload);
         finishSuccess();
@@ -277,7 +277,7 @@
         console.error(err);
         status.classList.add("error");
         status.textContent =
-          "うまく送信できなかったみたい…💦\nもう一度おしてみてね。";
+          "うまく送信できなかったみたい。\nもう一度おしてみてね。";
         btn.disabled = false;
         return;
       }
@@ -285,7 +285,7 @@
 
     // トークンなしで開いた場合: 回答ファイルをダウンロードして渡してもらう
     status.textContent =
-      "回答ファイルを保存しました。\nこのファイルを送ってあげてね 📎";
+      "回答ファイルを保存しました。\nこのファイルを送ってあげてね。";
     downloadFallback(payload);
     setTimeout(finishSuccess, 1200);
   });

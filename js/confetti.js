@@ -2,7 +2,7 @@
 (function () {
   const canvas = document.getElementById("confetti-canvas");
   const ctx = canvas.getContext("2d");
-  const COLORS = ["#ffd94a", "#f5b800", "#7dd8f0", "#38b6dd", "#fffdf7", "#ffb3c7"];
+  const COLORS = ["#f0c64f", "#f8e7b3", "#a7d9e8", "#d3ecf4", "#fffdf8", "#e9c8cf"];
   let pieces = [];
   let running = false;
 

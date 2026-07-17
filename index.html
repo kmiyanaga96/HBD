@@ -4,56 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Happy Birthday 🎂 Invitation</title>
+  <title>Happy Birthday — Invitation</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- 背景の飾り -->
-  <div class="bg-decoration" aria-hidden="true">
-    <div class="balloon balloon-1">🎈</div>
-    <div class="balloon balloon-2">🎈</div>
-    <div class="balloon balloon-3">🎈</div>
-    <div class="balloon balloon-4">🎈</div>
-    <div class="sparkle sparkle-1">✨</div>
-    <div class="sparkle sparkle-2">✨</div>
-    <div class="sparkle sparkle-3">⭐</div>
-    <div class="sparkle sparkle-4">✨</div>
-    <div class="sparkle sparkle-5">🌟</div>
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-  </div>
-
   <canvas id="confetti-canvas" aria-hidden="true"></canvas>
 
   <main id="app">
 
     <!-- シーン1: 封筒 -->
     <section id="scene-envelope" class="scene active">
-      <h1 class="site-title">Happy Birthday!</h1>
+      <p class="site-eyebrow">Birthday Invitation</p>
+      <h1 class="site-title">Happy Birthday</h1>
       <p class="site-subtitle" id="envelope-subtitle"></p>
       <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="招待状を開く">
         <div class="envelope">
           <div class="envelope-flap"></div>
-          <div class="envelope-letter">💌</div>
+          <div class="envelope-letter"><span>Invitation</span></div>
           <div class="envelope-body"></div>
-          <div class="envelope-seal">🎀</div>
+          <div class="envelope-seal">HBD</div>
         </div>
-        <p class="tap-hint">タップして開く 💛</p>
+        <p class="tap-hint">タップして開封する</p>
       </div>
     </section>
 
     <!-- シーン2: 招待状メッセージ -->
     <section id="scene-letter" class="scene">
       <div class="card letter-card">
-        <div class="card-ribbon">🎂 INVITATION 🎂</div>
+        <div class="card-eyebrow">Invitation</div>
         <h2 id="letter-title"></h2>
+        <div class="rule-motif" aria-hidden="true"><i></i></div>
         <p id="letter-message" class="letter-message"></p>
-        <button id="btn-start" class="btn btn-primary">質問にこたえる 🎉</button>
+        <button id="btn-start" class="btn btn-primary">質問にこたえる</button>
       </div>
     </section>
 
@@ -61,16 +47,16 @@
     <section id="scene-quiz" class="scene">
       <div class="card quiz-card">
         <div class="progress-wrap">
-          <div class="progress-dots" id="progress-dots"></div>
           <div class="progress-label" id="progress-label"></div>
+          <div class="progress-dots" id="progress-dots"></div>
         </div>
         <div class="quiz-emoji" id="quiz-emoji"></div>
         <h2 class="quiz-question" id="quiz-question"></h2>
         <p class="quiz-note" id="quiz-note"></p>
         <div class="choices" id="choices"></div>
         <div class="quiz-nav">
-          <button id="btn-back" class="btn btn-ghost">← もどる</button>
-          <button id="btn-next" class="btn btn-primary" disabled>つぎへ →</button>
+          <button id="btn-back" class="btn btn-ghost">もどる</button>
+          <button id="btn-next" class="btn btn-primary" disabled>つぎへ</button>
         </div>
       </div>
     </section>
@@ -78,11 +64,12 @@
     <!-- シーン4: 確認 -->
     <section id="scene-confirm" class="scene">
       <div class="card confirm-card">
-        <h2>この内容でいい? 🥰</h2>
+        <div class="card-eyebrow">Confirm</div>
+        <h2>この内容でOK?</h2>
         <ul id="confirm-list" class="confirm-list"></ul>
         <div class="quiz-nav">
-          <button id="btn-edit" class="btn btn-ghost">← なおす</button>
-          <button id="btn-submit" class="btn btn-primary btn-big">送信する 💌</button>
+          <button id="btn-edit" class="btn btn-ghost">なおす</button>
+          <button id="btn-submit" class="btn btn-primary">送信する</button>
         </div>
         <p id="submit-status" class="submit-status"></p>
       </div>
@@ -91,8 +78,9 @@
     <!-- シーン5: 完了 -->
     <section id="scene-done" class="scene">
       <div class="card done-card">
-        <div class="done-emoji">🎉🎂🎉</div>
+        <div class="done-script">Thank you</div>
         <h2 id="done-title"></h2>
+        <div class="rule-motif" aria-hidden="true"><i></i></div>
         <p id="done-message" class="letter-message"></p>
       </div>
     </section>
